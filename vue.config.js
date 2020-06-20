@@ -1,4 +1,6 @@
 const path = require('path')
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
 const resolve = dir => {
     return path.join(__dirname, dir)
 }
@@ -8,7 +10,7 @@ module.exports = {
     outputDir: './dist',
     assetsDir: 'static',
     filenameHashing: true, // false 来关闭文件名哈希
-    lintOnSave: false, 
+    lintOnSave: false,
     productionSourceMap: false, //  调整内部的 webpack 配置
 
     configureWebpack: config => {}, //(Object | Function)
@@ -35,7 +37,13 @@ module.exports = {
             },
 
             postcss: {
-                // 这里的选项会传递给 postcss-loader
+                plugins: [
+                    autoprefixer(),
+                    pxtorem({
+                        rootValue: 37.5,
+                        propList: ['*']
+                    })
+                ]
             }
         }, // 为所有的 CSS 及其预处理文件开启 CSS Modules。 // 这个选项不会影响 `*.vue` 文件。
 
@@ -50,6 +58,12 @@ module.exports = {
     // 三方插件的选项
 
     pluginOptions: {
-        // ...
+        autoprefixer: {
+            browsers: ['Android >= 4.0', 'iOS >= 8']
+        },
+        'postcss-pxtorem': {
+            rootValue: 37.5,
+            propList: ['*']
+        }
     }
 }
