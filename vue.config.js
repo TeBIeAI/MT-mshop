@@ -8,7 +8,7 @@ module.exports = {
     outputDir: './dist',
     assetsDir: 'static',
     filenameHashing: true, // false 来关闭文件名哈希
-    lintOnSave: false, // 关闭eslint
+    lintOnSave: false, 
     productionSourceMap: false, //  调整内部的 webpack 配置
 
     configureWebpack: config => {}, //(Object | Function)
