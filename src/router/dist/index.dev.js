@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _vue = _interopRequireDefault(require("vue"));
 
+var _App = _interopRequireDefault(require("../../src/App.vue"));
+
 var _vueRouter = _interopRequireDefault(require("vue-router"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -18,6 +20,12 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 _vue["default"].use(_vueRouter["default"]);
+
+var MSite = function MSite() {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('@/views/MSite/MSite.vue'));
+  });
+};
 
 var Home = function Home() {
   return Promise.resolve().then(function () {
@@ -33,15 +41,14 @@ var About = function About() {
 
 var routes = [{
   path: '/',
-  name: 'Home',
-  component: Home
-}, {
-  path: '/about',
-  name: 'About',
-  // route level code-splitting
-  // this generates a separate chunk (about.[hash].js) for this route
-  // which is lazy-loaded when the route is visited.
-  component: About
+  component: _App["default"],
+  children: [{
+    path: '',
+    redirect: '/msite'
+  }, {
+    path: '/msite',
+    component: MSite
+  }]
 }];
 var router = new _vueRouter["default"]({
   routes: routes

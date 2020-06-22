@@ -1,0 +1,1 @@
+"use strict";var _vue=_interopRequireDefault(require("vue")),_SvgIcon=_interopRequireDefault(require("@/components/svg/SvgIcon"));function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}_vue.default.component("svg-icon",_SvgIcon.default);var requireAll=function(e){return e.keys().map(e)},req=require.context("@/assets/icons",!1,/\.svg$/);requireAll(req);

@@ -5,8 +5,8 @@
             <van-cell title="单元格" value="内容"></van-cell>
             <van-cell title="单元格" value="内容"></van-cell>
 
-            <van-button disabled type="primary" class="btn"
-                >禁用状态</van-button
+            <van-button disabled type="primary" size="mini" class="btn"
+                >禁用状态1</van-button
             >
         </van-cell-group>
     </div>
@@ -18,13 +18,5 @@ export default {}
 
 <style>
 .btn {
-    /* width: 375px;
-    height: 100px;
-    font-size: 18px; */
-    /* width: 375px; */
-    font-size: 18px;
-}
-.fonts {
-    font-size: 14px;
 }
 </style>

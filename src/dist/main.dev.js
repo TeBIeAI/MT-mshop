@@ -10,14 +10,17 @@ var _store = _interopRequireDefault(require("./store"));
 
 var _vant = _interopRequireDefault(require("vant"));
 
-require("vant/lib/index.css");
+require("./config/rem");
 
-require("lib-flexible/flexible");
+require("vant/lib/index.css");
 
 var _fastclick = _interopRequireDefault(require("fastclick"));
 
+require("./assets/icons");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+// import 'lib-flexible/flexible'
 _vue["default"].config.productionTip = false;
 
 _vue["default"].use(_vant["default"]);

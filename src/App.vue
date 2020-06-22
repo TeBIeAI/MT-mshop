@@ -1,17 +1,19 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link>
-            |
-            <router-link to="/about">About</router-link>
-        </div>
         <router-view />
+        <Tab-bar></Tab-bar>
     </div>
 </template>
 
+<script>
+import TabBar from 'cpt/tabbar'
+export default {
+    components: {
+        TabBar
+    }
+}
+</script>
+
 <style>
-/* html,
-body {
-    font-size: 20px;
-} */
+@import './style/common.scss';
 </style>

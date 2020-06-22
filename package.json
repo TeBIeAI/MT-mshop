@@ -32,6 +32,7 @@
     "lib-flexible": "^0.3.2",
     "postcss-pxtorem": "^4.0.1",
     "prettier": "^1.19.1",
+    "svg-sprite-loader": "^5.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "postcss": {
